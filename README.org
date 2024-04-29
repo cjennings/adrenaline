@@ -1,0 +1,61 @@
+* Adrenaline
+[[#installation][Installation]] | [[#usage][Usage]] | [[#customization][Customization]] | [[#history][History]] | [[#license][License]]
+
+Optimize your modeline, control its clutter, and focus on what matters.
+
+<picture here>
+
+Adrenaline vanishes the modeline and it's clutter, while still providing the information you need in the echo area, and giving back an extra line of Emacs real-estate.
+
+* Installation
+This package is not yet on Melpa.
+
+To install Adrenaline, you will need to use Emacs 30+ with vc-package-install, or use
+Straight, Quelpa, or another Emacs package manager which allows you to install from source.
+
+** Emacs 30 with vc-package-install
+#+begin_src emacs-lisp
+    (use-package adrenaline
+      :vc (:url https://github.com/cjennings/adrenaline.git)
+      :config
+      (adrenaline-mode))
+#+end_src
+
+** Straight
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(wttrin :type git :host github :repo "cjennings/adrenaline"))
+#+end_src
+
+** Quelpa
+
+#+begin_src emacs-lisp
+(quelpa '(wttrin
+          :fetcher github :repo "cjennings/adrenaline"))
+#+end_src
+
+** Manual
+
+1 - Clone or download the Adrenaline repository:
+
+#+begin_src shell
+git clone https://github.com/cjennings/adrenaline.git
+#+end_src
+
+2 - Add the following to your Emacs init file:
+
+#+begin_src emacs-lisp
+  (add-to-list 'load-path "/path/to/cloned/repo/adrenaline")
+  (require 'adrenaline)
+  (adrenaline-mode)
+#+end_src
+
+* Usage
+* Customization
+* History
+I'm a fan of judiciously using screen real-estate since I work mostly on laptops. The modeline has always seemed a bit of a luxury. When I originally discovered Benjamin Lindqvist's [[https://github.com/tautologyclub/feebleline][Feebleline]], I installed immediately and thought no more about my modeline.
+
+After a while, Feebleline started providing error messages  in my *Messages* buffer about using deprecated functions. I noticed that Feebleline caused my Tramp sessions to be slow. So, I investigated the code and began fixing bugs.
+* License
+GPL-v3.0 or later
